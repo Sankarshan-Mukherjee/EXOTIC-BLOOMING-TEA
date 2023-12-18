@@ -1,0 +1,43 @@
+// half width
+@function half($width) {
+  @return $width/2;
+}
+
+// one-third width
+@function one-third($width) {
+  @return $width/3;
+}
+
+// one-fourth width
+@function one-fourth($width) {
+  @return $width/4;
+}
+
+// logical if else with interpolation
+
+$known-prefixes: webkit, moz, ms, o;
+@mixin prompt($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if not index ($known-prefixes, $prefix) {
+      @warn "unlnown prefix #{$prefix}.";
+    }
+
+    -#{$prefix}-#{$property}: $value;
+  }
+
+  #{$property}: $value;
+}
+
+// forloop practice
+$n: 8;
+$dec: 20%;
+@for $i from 1 to $n {
+  .list-#{$i} {
+    margin: 0 auto;
+    border-radius: 10px + $i * 2px;
+    max-width: 100% - $i * $dec;
+    height: 300px - $i * 50px;
+    background-color: lighten(#000000, $i * 10%);
+    margin-bottom: 20px - $i * 3px;
+  }
+}

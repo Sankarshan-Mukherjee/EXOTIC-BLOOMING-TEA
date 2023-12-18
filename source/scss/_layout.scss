@@ -1,0 +1,367 @@
+/*=====Reset styling======*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+article,
+aside,
+canvas,
+figure,
+figcaption,
+footer,
+header,
+nav,
+section,
+audio,
+video,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a,
+button,
+input,
+input[type="buttton"],
+input[type="submit"],
+select,
+.btn,
+textarea {
+  -webkit-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  text-decoration: none;
+  font-style: normal;
+}
+
+a:focus,
+button:focus,
+input:focus,
+input[type="buttton"]:focus,
+input[type="submit"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+label,
+span {
+  display: inline-block;
+  vertical-align: middle;
+  vertical-align: 0;
+}
+
+figure {
+  -webkit-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+  margin: 0;
+  font-size: 0;
+  line-height: 100%;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+.svg_container {
+  display: none;
+}
+
+::-moz-selection {
+  color: $body-color;
+}
+
+::selection {
+  color: $body-color;
+}
+
+// fonts
+h1 {
+  @include hding1;
+}
+
+h2 {
+  @include hding2;
+}
+
+h5 {
+  @include hding3;
+}
+
+h6 {
+  @include hding4;
+}
+
+p,
+li {
+  @include paragraph;
+}
+
+.spl_para {
+  font-size: 30px;
+  line-height: 44px;
+  @include respond-below(xs) {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
+span.diff_txt {
+  font-family: "winsome", sans-serif;
+}
+// Fonts end
+
+// button
+.type_one {
+  min-width: 240px;
+  height: 66px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  background-color: #ede4da;
+  font-size: 19px;
+  line-height: 23px;
+  color: $third-color;
+  &:hover {
+    background-color: $third-color;
+    color: $body-color;
+  }
+}
+
+// button end
+
+// hovering
+.hov_type_1 {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    width: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 1px;
+    background: #fff;
+    transition: 0.4s all ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+// container setting--------------------
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 1700px;
+  position: relative;
+  // @include respond-below(lg) {
+  //   max-width: 1320px;
+  // }
+  @include respond-below(mm) {
+    max-width: 1140px;
+  }
+
+  @include respond-below(sm) {
+    max-width: 960px;
+  }
+
+  @include respond-below(xsm) {
+    max-width: 720px;
+  }
+
+  @include respond-below(xs) {
+    max-width: 540px;
+  }
+  // @include respond-above(xsm){
+  //     max-width: 960px !important;
+  // }
+}
+
+// container setting end--------------------
+
+/*=====Reset styling======*/
+// header------------------------
+header {
+  position: absolute;
+  width: 100%;
+}
+// header------------------------
+
+// footer------------------------
+footer {
+  padding-top: 84px;
+  background-color: $primary-color;
+  text-align: center;
+
+  p,
+  a {
+    @include small_paragraph;
+  }
+
+  @include respond-below(xxxxxs) {
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .ftr_upper_content {
+    padding-bottom: 84px;
+    @include respond-below(xxxxxs) {
+      padding-bottom: 50px;
+    }
+    h5 {
+      color: $body-color;
+    }
+    .get_in {
+      margin-top: 32px;
+      h6 {
+        color: $secondary-color;
+        margin-bottom: 15px;
+      }
+
+      ul.cntct_wrp {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        @include respond-below(xxxxxs) {
+          flex-direction: column;
+          gap: 0px;
+        }
+        li {
+          flex: 0 0 auto;
+          color: $secondary-color;
+          position: relative;
+          @include respond-below(xxxxxs) {
+            padding: 10px 0;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 23px;
+            background-color: $body-color;
+            top: 47%;
+            right: -13px;
+            transform: translateY(-50%);
+            @include respond-below(xxxxxs) {
+              right: 43%;
+              width: 30px;
+              height: 2px;
+              top: 100%;
+              transform: translateX(-50%);
+            }
+          }
+
+          a {
+            @include paragraph;
+            span {
+              transition: 0.4s all linear;
+              &:hover {
+                color: $secondary-color;
+              }
+            }
+          }
+          &:last-child::after {
+            opacity: 0;
+          }
+
+          span {
+            color: $body-color;
+          }
+        }
+      }
+
+      ul.social_wrp {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        margin-top: 25px;
+        li > a {
+          width: 60px;
+          height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50px;
+          border: 1px solid $body-color;
+          transition: 0.4s all linear;
+          &:hover {
+            background-color: #ede4da;
+          }
+        }
+      }
+    }
+  }
+  .ftr_blw_content {
+    padding: 30px 0;
+    border-top: 1px solid #89725e;
+    .ftr_blw_innr {
+      max-width: 1292px;
+      margin: 0 auto;
+      @include footer-flex;
+      justify-content: space-between;
+      .copyright {
+        margin-top: -4px;
+        @include footer-flex;
+        .ftr_blw_link {
+          @include footer-flex;
+        }
+      }
+    }
+  }
+}
+
+// footer end------------------------

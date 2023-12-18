@@ -1,0 +1,419 @@
+body {
+  background-color: $body-color;
+  font-family: "Tenor Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+// tea page
+// header
+header.tea_page_hdr {
+  text-align: center;
+  .logo {
+    width: max-content;
+    margin: 18px 0;
+  }
+}
+
+// banner
+.tea_banner {
+  min-height: 1080px;
+  background-image: url(../images/tea_banner.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 266px 0 192px;
+
+  @include respond-below(xs) {
+    min-height: 100%;
+  }
+  @include respond-below(xxxxxs) {
+    padding: 192px 0 192px;
+  }
+  .bnnr_intro {
+    max-width: 853px;
+    padding: 100px 170px 66px 205px;
+    background-color: rgba(255, 255, 255, 0.4901960784);
+    margin-left: -113px;
+    @include respond-below(xs) {
+      padding: 20px;
+      margin-left: 0;
+      max-width: 100%;
+    }
+  }
+}
+
+// about
+.about_wrp {
+  min-height: 730px;
+  display: flex;
+  @include respond-below(xsm) {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .about_left {
+    @include half-box;
+    background-color: #ede4da;
+    justify-content: flex-end;
+    @include respond-below(xxxxxs) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @at-root {
+      .al_content {
+        max-width: 500px;
+        margin-right: 154px;
+        h2 {
+          margin-bottom: 60px;
+          @include respond-below(xs) {
+            margin-bottom: 30px;
+          }
+        }
+        p {
+          margin-bottom: 30px;
+        }
+
+        @include respond-below(lg) {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .about_right {
+    @include half-box;
+    background-color: $body-color;
+    justify-content: flex-start;
+    @include respond-below(xsm) {
+      margin: 0 auto;
+    }
+    @include respond-below(xxxxxs) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .al_content {
+      margin-left: 77px;
+      width: 50%;
+      @include respond-below(xsm) {
+        margin: 0 auto;
+        width: 100%;
+      }
+      h5 {
+        font-size: 30px;
+        .diff_txt {
+          font-size: 60px;
+        }
+
+        .spl_para {
+          color: $secondary-color;
+        }
+      }
+
+      @at-root {
+        ul.about-listing {
+          margin-top: 25px;
+          li {
+            position: relative;
+            margin-bottom: 46px;
+            padding-left: 35px;
+            @include respond-below(xs) {
+              margin-bottom: 25px;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 7px;
+              background-image: url(../images/flower.svg);
+              width: 15px;
+              height: 15px;
+            }
+            span {
+              font-size: 22px;
+              line-height: 30px;
+              display: block;
+              color: $secondary-color;
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// product section
+.product {
+  padding: 118px 0 50px 0;
+  @include respond-below(xsm) {
+    padding: 50px 0;
+  }
+  @include respond-below(xxxxxs) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @at-root {
+    .pdct_head {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+
+      .head_flower {
+        width: 30px;
+        margin: 0 auto 40px auto;
+      }
+
+      h2 {
+        padding: 0 72px;
+        @include respond-below(xs) {
+          padding: 0;
+        }
+      }
+
+      p {
+        margin-top: 50px;
+        @include respond-below(xs) {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+
+  .pdct_itm {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      .itm-content {
+        justify-content: flex-end;
+        @include respond-below(xsm) {
+          justify-content: center;
+        }
+      }
+
+      @include respond-below(xsm) {
+        flex-direction: column;
+      }
+    }
+
+    @include respond-below(xsm) {
+      flex-direction: column;
+    }
+    .itm-img {
+      @include half-box;
+      padding: 0 80px 0 0;
+      justify-content: flex-end;
+      @include respond-below(xsm) {
+        padding: 30px 0 0 0;
+      }
+      @include respond-below(xsm) {
+        justify-content: center;
+      }
+    }
+    .itm-content {
+      @include half-box;
+      padding: unset;
+
+      @include respond-below(xsm) {
+        max-width: unset;
+        width: 100%;
+        justify-content: center;
+      }
+      .inner-itm-content {
+        max-width: 625px;
+
+        h5 {
+          margin-bottom: 45px;
+          position: relative;
+          width: max-content;
+          padding: 0 10px;
+
+          @include respond-below(xsm) {
+            width: auto;
+          }
+          @include respond-below(xxxxxs) {
+            margin-bottom: 25px;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            width: 100%;
+            height: 18px;
+            background-color: #ede4da;
+            z-index: -1;
+            @include respond-below(xsm) {
+              bottom: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-below(xsm) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+// blooming section
+.blooming {
+  padding: 102px 0;
+  background-color: #ede4da;
+  @include respond-below(xsm) {
+    padding: 50px 0;
+  }
+  @include respond-below(xxxxxs) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .pdct_head {
+    max-width: 1000px;
+    .head_flower {
+      width: auto;
+    }
+    h2 {
+      color: $secondary-color;
+    }
+    h5 {
+      color: $secondary-color;
+    }
+  }
+
+  ul.cup_wrp {
+    max-width: 1060px;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    @include respond-below(xsm) {
+      flex-direction: column;
+      align-items: center;
+      max-width: unset;
+    }
+    li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include respond-below(xsm) {
+        flex-direction: column;
+      }
+      &::before {
+        content: "";
+        width: 96px;
+        height: 1px;
+        background-color: $third-color;
+        @include respond-below(xsm) {
+          width: 2px;
+          height: 60px;
+        }
+      }
+
+      &:nth-child(1) {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  ul.about-listing {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1220px;
+    margin: 0 auto;
+    counter-reset: li;
+
+    @include respond-below(xsm) {
+      flex-direction: column;
+    }
+    li {
+      flex: 0 0 50%;
+      &::before {
+        counter-increment: li;
+        content: counter(li) ". ";
+        background-image: unset;
+        width: unset;
+        height: unset;
+        top: -2px;
+        color: #dbc7b1;
+      }
+    }
+  }
+}
+
+// erotic sea section
+.erotic {
+  @include respond-below(xxxxxs) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .container {
+    .erotic_inner {
+      display: flex;
+      @include respond-below(xsm) {
+        flex-direction: column-reverse;
+      }
+      .el-left {
+        display: flex;
+        justify-content: flex-end;
+        width: 50%;
+        padding: 100px 0;
+        @include respond-below(xsm) {
+          width: 100%;
+        }
+        @include respond-below(xs) {
+          padding: 50px 0;
+        }
+        .al_content {
+          text-align: center;
+          max-width: 565px;
+          .el_img {
+            margin-bottom: 60px;
+            @include respond-below(xs) {
+              margin-bottom: 25px;
+            }
+          }
+
+          p {
+            margin-bottom: 42px;
+            @include respond-below(xs) {
+              margin-bottom: 25px;
+            }
+          }
+        }
+      }
+
+      .er_right {
+        width: 50%;
+        @include respond-below(xsm) {
+          width: 100%;
+        }
+        .er_right_img {
+          margin-right: -112px;
+          height: 100%;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+          }
+
+          @include respond-below(xxl) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    @include respond-below(mm) {
+      max-width: 1700px;
+    }
+  }
+}

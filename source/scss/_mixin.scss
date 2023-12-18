@@ -1,0 +1,95 @@
+@mixin hding1 {
+  font-size: 80px;
+  line-height: 96px;
+  font-family: $primary-font;
+  color: $primary-color;
+  @include respond-below(xsm) {
+    font-size: 55px;
+    line-height: 72px;
+  }
+  @include respond-below(xxxxxs) {
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+
+@mixin hding2 {
+  font-size: 60px;
+  line-height: 72px;
+  color: $primary-color;
+  font-family: $primary-font;
+  @include respond-below(xsm) {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  @include respond-below(xxxxxs) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@mixin hding3 {
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 400;
+  line-height: 72px;
+  color: $primary-color;
+  font-family: $primary-font;
+  @include respond-below(sm) {
+    font-size: 36px;
+    line-height: 54px;
+  }
+  @include respond-below(xxxxxs) {
+    font-size: 26px;
+    line-height: 40px;
+  }
+}
+
+@mixin hding4 {
+  font-size: 30px;
+  line-height: 44px;
+  font-weight: 400;
+  font-family: $primary-font;
+}
+
+@mixin paragraph {
+  font-size: 19px;
+  line-height: 36px;
+  color: $primary-color;
+  font-family: $primary-font;
+  @include respond-below(xxxxxs) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@mixin small_paragraph {
+  font-size: 12px;
+  line-height: 20px;
+  color: $body-color;
+  font-family: $primary-font;
+}
+
+@mixin half-box {
+  padding: 120px 0;
+  flex: 0 0 auto;
+  width: 50%;
+  display: flex;
+  height: auto;
+  @include respond-below(xsm) {
+    width: 100%;
+    padding: 50px 0 30px;
+  }
+}
+
+@mixin footer-flex {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  @include respond-below(xsm) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+}
