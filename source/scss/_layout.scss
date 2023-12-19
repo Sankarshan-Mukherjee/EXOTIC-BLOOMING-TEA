@@ -157,19 +157,25 @@ span.diff_txt {
 
 // button
 .type_one {
+  @include button-style;
   min-width: 240px;
   height: 66px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Lato", sans-serif;
-  background-color: #ede4da;
-  font-size: 19px;
-  line-height: 23px;
+  background-color: $fourth-color;
   color: $third-color;
   &:hover {
     background-color: $third-color;
     color: $body-color;
+  }
+}
+.type_two {
+  @include button-style;
+  min-width: 157px;
+  height: 41px;
+  background-color: $secondary-color;
+  color: $body-color;
+  border: none;
+  &:hover {
+    background-color: $third-color;
   }
 }
 
@@ -188,7 +194,7 @@ span.diff_txt {
     max-width: 100%;
     margin: 0 auto;
     height: 1px;
-    background: #fff;
+    background: $body-color;
     transition: 0.4s all ease-in-out;
   }
 
@@ -231,6 +237,22 @@ span.diff_txt {
 }
 
 // container setting end--------------------
+
+// datepicker
+.ui-datepicker {
+  background-color: $secondary-color;
+  color: $body-color;
+  padding: 20px;
+
+  a {
+    color: $body-color;
+    padding: 2px;
+  }
+
+  .ui-datepicker-next {
+    margin-left: 110px;
+  }
+}
 
 /*=====Reset styling======*/
 // header------------------------
@@ -339,7 +361,7 @@ footer {
           border: 1px solid $body-color;
           transition: 0.4s all linear;
           &:hover {
-            background-color: #ede4da;
+            background-color: $fourth-color;
           }
         }
       }

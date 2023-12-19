@@ -93,3 +93,13 @@
     gap: 15px;
   }
 }
+
+@mixin button-style {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  font-size: 19px;
+  line-height: 23px;
+  text-transform: uppercase;
+}

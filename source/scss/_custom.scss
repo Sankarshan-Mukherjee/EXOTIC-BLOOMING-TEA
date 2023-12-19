@@ -4,7 +4,7 @@ body {
   overflow-x: hidden;
 }
 
-// tea page
+// ----------------------------------tea page----------------------------------
 // header
 header.tea_page_hdr {
   text-align: center;
@@ -53,7 +53,7 @@ header.tea_page_hdr {
 
   .about_left {
     @include half-box;
-    background-color: #ede4da;
+    background-color: $fourth-color;
     justify-content: flex-end;
     @include respond-below(xxxxxs) {
       padding-left: 20px;
@@ -245,7 +245,7 @@ header.tea_page_hdr {
             bottom: 10px;
             width: 100%;
             height: 18px;
-            background-color: #ede4da;
+            background-color: $fourth-color;
             z-index: -1;
             @include respond-below(xsm) {
               bottom: 3px;
@@ -265,7 +265,7 @@ header.tea_page_hdr {
 // blooming section
 .blooming {
   padding: 102px 0;
-  background-color: #ede4da;
+  background-color: $fourth-color;
   @include respond-below(xsm) {
     padding: 50px 0;
   }
@@ -417,3 +417,346 @@ header.tea_page_hdr {
     }
   }
 }
+
+//// ----------------------------------home page----------------------------------
+// header
+.home-header {
+  position: absolute;
+  top: 0;
+  padding: 15px 0;
+  z-index: 10;
+  .header-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    nav {
+      display: flex;
+      align-items: center;
+      .nav-wrapper {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        a {
+          @include paragraph;
+          color: $body-color;
+        }
+      }
+      .home-logo {
+        margin-left: 160px;
+      }
+    }
+
+    .type_one {
+      height: 44px;
+      min-width: 114px;
+    }
+  }
+}
+
+// banner
+.home-banner {
+  background-image: url(../images/home-banner-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 276px 0 211px;
+  position: relative;
+  .home-banner-content {
+    text-align: center;
+    .banner-logo {
+      margin-bottom: 223px;
+    }
+    p {
+      color: $body-color;
+    }
+  }
+}
+
+// booking section
+.input-area-wrapper {
+  padding: 69px 0;
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .booking-meta {
+    min-width: 423px;
+    height: 41px;
+    appearance: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding-right: 30px;
+    background-image: url(../images/dot.webp);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center right 15px;
+    option {
+      color: $primary-color;
+    }
+  }
+}
+.beach_img {
+  margin: 0 auto;
+  max-width: 1920px;
+}
+
+// booking section end
+
+// journey section
+.journey {
+  padding-top: 60px;
+  .pdct_head {
+    .head_flower {
+      width: 90px;
+    }
+    h2 {
+      color: $secondary-color;
+    }
+  }
+
+  .boutiqua_wrp {
+    max-width: 1303px;
+    margin: 0 auto;
+    .boutiqua_top {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 65px;
+      .bt-lft {
+        flex: 0 0 auto;
+        max-width: 701px;
+        .boutiq_img {
+          margin-top: 20px;
+        }
+      }
+
+      .bt-right {
+        flex: 0 0 auto;
+        max-width: 531px;
+      }
+    }
+    .boutiqua_slider {
+      .wrapper {
+        margin: 90px auto;
+        .slider-container {
+          position: relative;
+          width: 100%;
+          .item {
+            outline: none;
+            position: relative;
+            width: 100%;
+            .slide-content {
+              margin-top: 104px;
+              max-width: 682px;
+              h5 {
+                color: $secondary-color;
+              }
+              @at-root {
+                .para_underline {
+                  @include paragraph;
+                  margin-top: 39px;
+                  position: relative;
+                  width: max-content;
+                  padding: 0 10px 0 5px;
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 4px;
+                    width: 100%;
+                    height: 10px;
+                    background-color: $fourth-color;
+                    z-index: -1;
+                  }
+                }
+              }
+            }
+          }
+
+          .slides-numbers {
+            color: #d4bea6;
+            display: none;
+            font-size: 20px;
+            font-weight: 300;
+            left: 0;
+            position: absolute;
+            bottom: 20%;
+            font-size: 30px;
+            .active {
+              color: $secondary-color;
+              margin-right: -6px;
+            }
+            .total {
+              margin-left: -5px;
+            }
+          }
+        }
+
+        .slick-arrow {
+          padding: 0;
+          border: 0;
+          outline: none;
+          position: absolute;
+          bottom: 20%;
+          z-index: 5;
+          cursor: pointer;
+          right: 0;
+        }
+        .slick-arrow.next {
+          right: 80px;
+          &::before {
+            content: "";
+            width: 1px;
+            height: 50px;
+            background-color: #4d4d4d7f;
+            position: absolute;
+            top: 50%;
+            right: -23px;
+            transform: translateY(-50%);
+          }
+        }
+        .slick-arrow.prev {
+          right: 0px;
+          transform: rotate(180deg) translateY(4px);
+        }
+      }
+    }
+  }
+}
+
+// journey section end
+
+// location gallery sec
+.loc-gallery {
+  position: relative;
+  padding-bottom: 100px;
+  .main-gallery-wrp {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1462px;
+    margin: 0 auto;
+    // gap: 200px;
+    .loc-gallery-wrapper {
+      flex: 0 0 61%;
+      padding-right: 200px;
+      .gallery-main-wrp {
+        .gallery-img {
+          margin-left: -228px;
+        }
+        p {
+          margin: 109px 0 82px;
+          text-align: right;
+        }
+      }
+
+      .sub-gallery-wrp {
+        display: flex;
+        text-align: right;
+        justify-content: flex-end;
+        align-items: center;
+        .sub-gallery-content {
+          flex: 0 0 auto;
+          max-width: 273px;
+          padding-right: 10px;
+        }
+        .sub-gallery-image {
+          flex: 0 0 auto;
+        }
+      }
+
+      &:nth-child(even) {
+        flex: 0 0 39%;
+        padding-right: 0;
+        h5 {
+          margin-top: 40px;
+        }
+        .para_underline {
+          margin-top: 32px;
+        }
+        .gallery-img {
+          margin-left: 0px;
+        }
+
+        .sub-gallery-wrp {
+          justify-content: flex-start;
+          text-align: left;
+          margin: 87px 0 241px;
+          .sub-gallery-content {
+            max-width: 480px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// location gallery sec end
+
+// relaxation sec
+.relax {
+  min-height: 1080px;
+  background-image: url(../images/relax-bg.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  .relax-cont {
+    text-align: center;
+    padding: 450px 0;
+    h2 {
+      color: $body-color;
+      text-transform: uppercase;
+      margin: 17px 0 20px;
+      letter-spacing: 5px;
+    }
+    h5 {
+      color: $body-color;
+    }
+    .para_underline {
+      margin: 0 auto;
+      z-index: 2;
+      color: $body-color;
+      &::before {
+        z-index: -1;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+// relaxation sec end
+
+// quot sec
+.quot {
+  background-image: url(../images/quot-bg.webp);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 88px 0 197px 0;
+  background-repeat: no-repeat;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0000001a;
+    z-index: 0;
+  }
+  .quot-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    .qmark img {
+      filter: opacity(0.1) brightness(0);
+    }
+    h2 {
+      color: #89725d;
+      max-width: 860px;
+      margin: 30px auto 0;
+    }
+  }
+}
+
+// quot sec end
